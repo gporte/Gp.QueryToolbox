@@ -1,0 +1,9 @@
+﻿<Query>
+  <AndGroup>
+    <Criteria Left="FaultCode" Operator="Contains" Right="GEFCO"/>
+    <Criteria Left="Application" Operator="Equals" Right="DoIT.GAFI"/>
+  </AndGroup>
+  <AndGroup>
+    <Criteria Left="Application" Operator="Equals" Right="LogAuto.B2B.GEFCO"/>
+  </AndGroup>
+</Query>
