@@ -13,6 +13,18 @@ namespace Gp.QueryToolbox
 		}
 
 		#region Constructors
+		/// <summary>
+		/// Initializes a new instance of the <see cref="Query"/> class.
+		/// </summary>
+		public Query() {
+			this._andGroups = new List<AndGroup>();
+		}
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="Query"/> class.
+		/// </summary>
+		/// <param name="elem">The XElem.</param>
+		/// <exception cref="System.Exception"></exception>
 		public Query(XElement elem) {
 			this._andGroups = new List<AndGroup>();
 
@@ -26,6 +38,10 @@ namespace Gp.QueryToolbox
 			}
 		}
 		#endregion
+
+		public void AddAndGroup(AndGroup grp) {
+			this._andGroups.Add(grp);
+		}
 
 		/// <summary>
 		/// Returns a <see cref="System.String" /> that represents this Query.

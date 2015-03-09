@@ -14,6 +14,18 @@ namespace Gp.QueryToolbox
 		}
 		
 		#region Constructors
+		/// <summary>
+		/// Initializes a new instance of the <see cref="AndGroup"/> class.
+		/// </summary>
+		public AndGroup() {
+			this._criteriasList = new List<Criteria>();
+		}
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="AndGroup"/> class.
+		/// </summary>
+		/// <param name="elem">The XElement.</param>
+		/// <exception cref="System.Exception"></exception>
 		public AndGroup(XElement elem) {
 			this._criteriasList = new List<Criteria>();
 
@@ -27,6 +39,14 @@ namespace Gp.QueryToolbox
 			}
 		}
 		#endregion
+
+		/// <summary>
+		/// Adds the criteria.
+		/// </summary>
+		/// <param name="crit">The crit.</param>
+		public void AddCriteria(Criteria crit) {
+			this._criteriasList.Add(crit);
+		}
 
 		/// <summary>
 		/// Returns a <see cref="System.String" /> that represents this Criteria's group.

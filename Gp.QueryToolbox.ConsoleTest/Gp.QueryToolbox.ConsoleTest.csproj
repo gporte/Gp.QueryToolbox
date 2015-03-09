@@ -32,10 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Gp.QueryToolbox, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Gp.QueryToolbox.1.0.3.0\lib\net45\Gp.QueryToolbox.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -57,6 +53,12 @@
     <Content Include="Search-1.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gp.QueryToolbox\Gp.QueryToolbox.csproj">
+      <Project>{dbdf0de6-475c-46a2-b764-b900885a2981}</Project>
+      <Name>Gp.QueryToolbox</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

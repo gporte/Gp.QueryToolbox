@@ -13,6 +13,17 @@ namespace Gp.QueryToolbox
 		#endregion
 
 		#region Constructors
+		/// <summary>
+		/// Initializes a new instance of the <see cref="Criteria"/> class.
+		/// </summary>
+		public Criteria() { }
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="Criteria"/> class.
+		/// </summary>
+		/// <param name="elem">The XElement.</param>
+		/// <exception cref="System.Exception">
+		/// </exception>
 		public Criteria(XElement elem) {
 			if (elem.Name != Resources.CriteriaXElementName) {
 				throw new Exception(string.Format(Resources.Err_InvalidXElementName, Resources.CriteriaXElementName, elem.Name));

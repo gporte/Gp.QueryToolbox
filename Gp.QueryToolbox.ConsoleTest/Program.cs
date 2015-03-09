@@ -14,8 +14,15 @@ namespace Gp.QueryToolbox.ConsoleTest
 			var datas = InitializeDatas();
 
 			// initialisation de l'objet SearchStatement à partir du fichier XML
-			var elem = XElement.Load(@".\search-1.xml");
-			var query = new Query(elem);
+			//var elem = XElement.Load(@".\search-1.xml");
+			//var query = new Query(elem);
+
+			var grp = new AndGroup();
+			grp.AddCriteria(new Criteria { Property = "FaultType", Operator = Op.Equals, Value = "TECH" });
+			grp.AddCriteria(new Criteria { Property = "Application", Operator = Op.Contains, Value = "HYUNDAI" });
+
+			var query = new Query();
+			query.AddAndGroup(grp);
 
 			QueryHelper.GetXElement(query);
 
