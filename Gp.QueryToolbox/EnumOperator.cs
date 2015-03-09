@@ -1,5 +1,5 @@
 ﻿
-namespace Gp.QueryToolbox.Model
+namespace Gp.QueryToolbox
 {
 	public enum Op
 	{

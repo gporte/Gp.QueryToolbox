@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Xml.Linq;
 
-namespace Gp.QueryToolbox.Model
+namespace Gp.QueryToolbox
 {
 	public class Criteria
 	{
