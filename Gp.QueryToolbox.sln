@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gp.QueryToolbox", "Gp.QueryToolbox\Gp.QueryToolbox.csproj", "{DBDF0DE6-475C-46A2-B764-B900885A2981}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gp.QueryToolbox.ConsoleTest", "Gp.QueryToolbox.ConsoleTest\Gp.QueryToolbox.ConsoleTest.csproj", "{498D47A7-B5DD-487C-BB38-641E0AE85606}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -16,6 +18,9 @@ Global
 		{DBDF0DE6-475C-46A2-B764-B900885A2981}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBDF0DE6-475C-46A2-B764-B900885A2981}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBDF0DE6-475C-46A2-B764-B900885A2981}.Release|Any CPU.Build.0 = Release|Any CPU
+		{498D47A7-B5DD-487C-BB38-641E0AE85606}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{498D47A7-B5DD-487C-BB38-641E0AE85606}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{498D47A7-B5DD-487C-BB38-641E0AE85606}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

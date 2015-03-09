@@ -1,5 +1,5 @@
 ﻿using Gp.QueryToolbox.ConsoleTest.ModelTest;
-using Gp.QueryToolbox.Model;
+using Gp.QueryToolbox;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +16,8 @@ namespace Gp.QueryToolbox.ConsoleTest
 			// initialisation de l'objet SearchStatement à partir du fichier XML
 			var elem = XElement.Load(@".\search-1.xml");
 			var query = new Query(elem);
+
+			QueryHelper.GetXElement(query);
 
 			// construction de l'expression
 			var queryResult = QueryHelper.GetExpression(datas.AsQueryable(), query).ToList();
