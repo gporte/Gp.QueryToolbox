@@ -16,7 +16,7 @@ namespace Gp.QueryToolbox
 		/// <summary>
 		/// Gets the expression.
 		/// </summary>
-		/// <typeparam name="T">Type of teh datas to query.</typeparam>
+		/// <typeparam name="T">Type of the datas to query.</typeparam>
 		/// <param name="datas">The datas.</param>
 		/// <param name="query">The query object.</param>
 		/// <returns>The expression for the query.</returns>
@@ -109,13 +109,13 @@ namespace Gp.QueryToolbox
 						case Op.LessThanOrEqual:
 							return Expression.LessThanOrEqual(member, cst);
 						default:
-							throw new Exception(string.Format("Operator '{0}' not supported for type '{1}'", criteria.Operator, member.Type.ToString()));
+							throw new Exception(string.Format(Resources.Err_OperatorNotSupported, criteria.Operator, member.Type.ToString()));
 					}
 				}
 				else {
 					throw new Exception(
 						string.Format(
-							"Value '{0}' does not corespond to excepted type '{1}' for '{2}' property.",
+							Resources.Err_InvalideValue,
 							criteria.Value,
 							typeof(int).ToString(),
 							criteria.Property
@@ -143,13 +143,13 @@ namespace Gp.QueryToolbox
 						case Op.LessThanOrEqual:
 							return Expression.LessThanOrEqual(member, cst);
 						default:
-							throw new Exception(string.Format("Operator '{0}' not supported for type '{1}'", criteria.Operator, member.Type.ToString()));
+							throw new Exception(string.Format(Resources.Err_OperatorNotSupported, criteria.Operator, member.Type.ToString()));
 					}
 				}
 				else {
 					throw new Exception(
 						string.Format(
-							"Value '{0}' does not corespond to excepted type '{1}' for '{2}' property.",
+							Resources.Err_InvalideValue,
 							criteria.Value,
 							typeof(DateTime).ToString(),
 							criteria.Property
@@ -169,13 +169,13 @@ namespace Gp.QueryToolbox
 						case Op.NotEquals:
 							return Expression.NotEqual(member, cst);
 						default:
-							throw new Exception(string.Format("Operator '{0}' not supported for type '{1}'", criteria.Operator, member.Type.ToString()));
+							throw new Exception(string.Format(Resources.Err_OperatorNotSupported, criteria.Operator, member.Type.ToString()));
 					}
 				}
 				else {
 					throw new Exception(
 						string.Format(
-							"Value '{0}' does not corespond to excepted type '{1}' for '{2}' property.",
+							Resources.Err_InvalideValue,
 							criteria.Value,
 							typeof(DateTime).ToString(),
 							criteria.Property

@@ -135,8 +135,14 @@
   <data name="Err_CriteriaMissingAttribute" xml:space="preserve">
     <value>Criteria element invalid : Missing attribute '{0}'</value>
   </data>
+  <data name="Err_InvalideValue" xml:space="preserve">
+    <value>Value '{0}' does not corespond to excepted type '{1}' for '{2}' property.</value>
+  </data>
   <data name="Err_InvalidXElementName" xml:space="preserve">
     <value>Invalid XElement name. {0} expected, {1} founded.</value>
+  </data>
+  <data name="Err_OperatorNotSupported" xml:space="preserve">
+    <value>Operator '{0}' not supported for type '{1}'.</value>
   </data>
   <data name="Err_UnknowOperator" xml:space="preserve">
     <value>Unknow operator.</value>

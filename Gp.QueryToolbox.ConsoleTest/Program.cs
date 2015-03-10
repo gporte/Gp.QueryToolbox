@@ -15,16 +15,20 @@ namespace Gp.QueryToolbox.ConsoleTest
 
 			// initialisation de l'objet SearchStatement à partir du fichier XML
 			//var elem = XElement.Load(@".\search-1.xml");
-			//var query = new Query(elem);
+			//var query = new Query(elem);Create a query from XML
 
 			var grp = new AndGroup();
-			grp.AddCriteria(new Criteria { Property = "FaultType", Operator = Op.Equals, Value = "TECH" });
-			grp.AddCriteria(new Criteria { Property = "Application", Operator = Op.Contains, Value = "HYUNDAI" });
+			grp.AddCriteria(new Criteria { Property = "FaultCode", Operator = Op.Contains, Value = "GEFCO" });
+			grp.AddCriteria(new Criteria { Property = "Application", Operator = Op.Equals, Value = "DoIT.GAFI" });
+
+			var grp2 = new AndGroup();
+			grp2.AddCriteria(new Criteria { Property = "Application", Operator = Op.Equals, Value = "LogAuto.B2B.GEFCO" });
 
 			var query = new Query();
 			query.AddAndGroup(grp);
+			query.AddAndGroup(grp2);
 
-			QueryHelper.GetXElement(query);
+			var xml = QueryHelper.GetXElement(query).ToString();
 
 			// construction de l'expression
 			var queryResult = QueryHelper.GetExpression(datas.AsQueryable(), query).ToList();

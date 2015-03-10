@@ -115,11 +115,29 @@ namespace Gp.QueryToolbox {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Value &apos;{0}&apos; does not corespond to excepted type &apos;{1}&apos; for &apos;{2}&apos; property..
+        /// </summary>
+        internal static string Err_InvalideValue {
+            get {
+                return ResourceManager.GetString("Err_InvalideValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid XElement name. {0} expected, {1} founded..
         /// </summary>
         internal static string Err_InvalidXElementName {
             get {
                 return ResourceManager.GetString("Err_InvalidXElementName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Operator &apos;{0}&apos; not supported for type &apos;{1}&apos;..
+        /// </summary>
+        internal static string Err_OperatorNotSupported {
+            get {
+                return ResourceManager.GetString("Err_OperatorNotSupported", resourceCulture);
             }
         }
         
