@@ -31,6 +31,12 @@ namespace Gp.QueryToolbox
 			return q.AsQueryable();
 		}
 
+		/// <summary>
+		/// Create an expression from a group of criterias (AndAlso combination).
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="andGrp">Group of criterias.</param>
+		/// <returns></returns>
 		private static Expression<Func<T, bool>> GetExpression<T>(AndGroup andGrp) {
 			if (andGrp.CriteriasList.Count() == 0) {
 				return null;
@@ -47,16 +53,16 @@ namespace Gp.QueryToolbox
 			}
 			else {
 				while (andGrp.CriteriasList.Count() > 0) {
-					var f1 = andGrp.CriteriasList[0];
-					var f2 = andGrp.CriteriasList[1];
+					var crit1 = andGrp.CriteriasList[0];
+					var crit2 = andGrp.CriteriasList[1];
 
-					if (exp == null)
+					if (exp == null) // first loop
 						exp = GetExpressionAndAlso<T>(param, andGrp.CriteriasList[0], andGrp.CriteriasList[1]);
 					else
 						exp = Expression.AndAlso(exp, GetExpressionAndAlso<T>(param, andGrp.CriteriasList[0], andGrp.CriteriasList[1]));
 
-					andGrp.CriteriasList.Remove(f1);
-					andGrp.CriteriasList.Remove(f2);
+					andGrp.CriteriasList.Remove(crit1);
+					andGrp.CriteriasList.Remove(crit2);
 
 					if (andGrp.CriteriasList.Count == 1) {
 						exp = Expression.AndAlso(exp, GetExpression<T>(param, andGrp.CriteriasList[0]));
@@ -68,6 +74,16 @@ namespace Gp.QueryToolbox
 			return Expression.Lambda<Func<T, bool>>(exp, param);
 		}
 
+
+		/// <summary>
+		/// Create an expression from a criteria.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="param">The parameter.</param>
+		/// <param name="criteria">The criteria.</param>
+		/// <returns></returns>
+		/// <exception cref="System.Exception">
+		/// </exception>
 		private static Expression GetExpression<T>(ParameterExpression param, Criteria criteria) {
 			MemberExpression member = Expression.Property(param, criteria.Property);
 			ConstantExpression constant = Expression.Constant(criteria.Value);
@@ -190,6 +206,14 @@ namespace Gp.QueryToolbox
 			return null;
 		}
 
+		/// <summary>
+		/// Combine two criterias in an AndAlso expression.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="param">Expression parameter.</param>
+		/// <param name="crit1">First criteria.</param>
+		/// <param name="crit2">Second criteria.</param>
+		/// <returns></returns>
 		private static BinaryExpression GetExpressionAndAlso<T>(ParameterExpression param, Criteria crit1, Criteria crit2) {
 			Expression bin1 = GetExpression<T>(param, crit1);
 			Expression bin2 = GetExpression<T>(param, crit2);
